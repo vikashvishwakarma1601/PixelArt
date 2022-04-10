@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("../images/bg.png");
+  background-color: #e3e3e3;
+}
+
+#loader {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#loader .pixel {
+  border: none;
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: all 0.5s ease-in-out;
+}
+
+main {
+  width: 100%;
+  min-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pixel {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border: 0.3px solid rgba(100, 100, 100, 0.404);
+}
+
+.color-wrapper {
+  width: 80px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  cursor: pointer;
+}
+
+:where(.color-wrapper, #loader) .pixel {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+
+.active {
+  transform: scale(1.4);
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.color-wrapper .pixel:hover {
+  transform: scale(1.2);
+}
+
+.color-wrapper .pixel:active {
+  transform: scale(0.8);
+}
+
+.color--8a2be2a8 {
+  background-color: #8a2be2a8;
+}
+
+.color--2b96e2a8 {
+  background-color: #2b96e2a8;
+}
+
+.color--2be26ca8 {
+  background-color: #2be26ca8;
+}
+
+.color--e2bb2ba8 {
+  background-color: #e2bb2ba8;
+}
+.color--546e7aa8 {
+  background-color: #546e7aa8;
+}
+
+.reset-btn {
+  width: 80px;
+  margin: 20px 0;
+  padding: 10px 5px;
+  border: none;
+  border-radius: 3px;
+  font-family: "Inconsolata", monospace;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  color: grey;
+  background-color: #d7d7d7;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.reset-btn:active {
+  transform: scale(0.8);
+}
+
+
+@media all and (max-width:767px){
+  main{
+    flex-direction: column;
+  }
+  .color-wrapper{
+    width: 100%;
+    flex-direction: row;
+  }
+}
